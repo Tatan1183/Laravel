@@ -125,6 +125,7 @@
                 <th>Código</th>
                 <th>Nombre</th>
                 <th>Correo</th>
+                <th>Género</th> <!-- Nueva columna -->
                 <th>Acciones</th>
             </tr>
         </thead>
@@ -134,9 +135,10 @@
                 <td>{{ $usuario->codigo }}</td>
                 <td>{{ $usuario->nombre }}</td>
                 <td>{{ $usuario->correo }}</td>
+                <td>{{ $usuario->genero }}</td> <!-- Mostrar el genero -->
                 <td class="actions">
-                    <a href="{{ route('usuarios.edit', $usuario) }}" class="button-edit">Editar</a>
-                    <form action="{{ route('usuarios.destroy', $usuario) }}" method="POST" class="form-delete">
+                    <a href="{{ route('usuarios.edit', $usuario->codigo) }}" class="button-edit">Editar</a>
+                    <form action="{{ route('usuarios.destroy', $usuario->codigo) }}" method="POST" class="form-delete">
                         @csrf @method('DELETE')
                         <button type="submit" class="button-delete">Eliminar</button>
                     </form>

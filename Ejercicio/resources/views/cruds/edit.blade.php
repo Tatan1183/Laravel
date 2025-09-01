@@ -74,8 +74,7 @@
 
         .btn-back {
             margin-top: 5px;
-                        width: 100%;
-
+            width: 100%;
             background-color: #007bff;
             color: white;
             text-align: center;
@@ -105,6 +104,14 @@
             
             <label for="correo">Correo:</label>
             <input type="email" id="correo" name="correo" value="{{ $usuario->correo }}" required>
+
+            <label for="genero">Género:</label> <!-- Nuevo campo para el género -->
+            <select id="genero" name="genero" required>
+                <option value="">Seleccione</option>
+                <option value="Hombre" {{ $usuario->genero == 'Hombre' ? 'selected' : '' }}>Hombre</option>
+                <option value="Mujer" {{ $usuario->genero == 'Mujer' ? 'selected' : '' }}>Mujer</option>
+                <option value="Otro" {{ $usuario->genero == 'Otro' ? 'selected' : '' }}>Otro</option>
+            </select>
             
             <button type="submit">Actualizar</button>
         </form>
